@@ -1,3 +1,3 @@
 export default () => {
-  return Math.random().toString(36).substring(2, 6).toUpperCase();
+  return Math.random().toString(36).substring(2, 7).toUpperCase();
 };
