@@ -1,6 +1,9 @@
 const state = {
   players: [],
   roomId: null,
+  roomSetting: {
+    playTime: 5,
+  },
 };
 
 const mutations = {
@@ -9,7 +12,10 @@ const mutations = {
   },
   SET_ROOM_ID(state, roomId) {
     state.roomId = roomId;
-  }
+  },
+  SET_ROOM_SETTING(state, roomSetting) {
+    state.roomSetting = roomSetting;
+  },
 };
 
 const actions = {
@@ -18,12 +24,16 @@ const actions = {
   },
   setRoomId({ commit, state }, roomId) {
     commit('SET_ROOM_ID', roomId);
-  }
+  },
+  setRoomSetting({ commit, state }, roomSetting) {
+    commit('SET_ROOM_SETTING', roomSetting);
+  },
 };
 
 const getters = {
-  players: state => state.players,
-  roomId: state => state.roomId,
+  players: (state) => state.players,
+  roomId: (state) => state.roomId,
+  roomSetting: (state) => state.roomSetting,
 };
 
 export default {
