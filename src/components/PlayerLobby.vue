@@ -3,7 +3,7 @@ import SignDiv from '@/components/SignDiv.vue';
 
 export default {
   name: 'PlayerLobby',
-  components: [SignDiv],
+  components: { SignDiv },
   props: {
     players: {
       type: Array,
