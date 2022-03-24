@@ -14,10 +14,13 @@ export default {
     SignDiv,
   },
   sockets: {
-   
+    randomed_role: function (data) {
+      console.log(data);
+      this.$store.dispatch('setLocation', data.location);
+      this.$store.dispatch('setRole', data.role.name);
+    },
   },
-  methods: {
-  },
+  methods: {},
   beforeMount() {},
 };
 </script>
@@ -27,7 +30,13 @@ export default {
     <div>
       <div class="flex flex-col items-center justify-center">
         <TwoColorText
-          right="PLAY"
+          left="YOUR ROLE : "
+          :right="$store.state.Game.role"
+          class="mt-5 text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
+        />
+        <TwoColorText
+          left="YOUR Location : "
+          :right="$store.state.Game.location"
           class="mt-5 text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 
