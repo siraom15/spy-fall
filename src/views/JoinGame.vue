@@ -4,9 +4,9 @@ import JoinGameForm from '@/components/JoinGameForm.vue';
 import BackButton from '@/components/BackButton.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import { ref } from '@vue/reactivity';
-
 export default {
   name: 'JoinGame',
+  setup() {},
   data() {
     return {
       roomId: ref(''),
@@ -23,9 +23,9 @@ export default {
     update_player_room: function (data) {
       console.log(data);
     },
-    failed_join_room: function (data){
-      alert(data.msg)
-    }
+    failed_join_room: function (data) {
+      alert(data.msg);
+    },
   },
   methods: {
     join_room() {
@@ -33,6 +33,9 @@ export default {
         roomId: this.roomId,
       });
     },
+  },
+  beforeMount() {
+    console.log(this.$route.query); // outputs 'yay'
   },
 };
 </script>
