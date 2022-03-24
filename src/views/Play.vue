@@ -14,25 +14,9 @@ export default {
     SignDiv,
   },
   sockets: {
-    update_player_room: function (data) {
-      console.log(data);
-      this.$store.dispatch('setPlayers', data.players);
-    },
-    left_room: function (data) {
-      console.log(data);
-    },
-    started_game: function (data) {
-      console.log(data);
-      this.$router.push('/play');
-    },
+   
   },
   methods: {
-    leaveRoom() {
-      this.$socket.emit('leave_room', {
-        roomId: this.$store.state.Lobby.roomId,
-      });
-      this.$router.push('/');
-    },
   },
   beforeMount() {},
 };
@@ -43,13 +27,12 @@ export default {
     <div>
       <div class="flex flex-col items-center justify-center">
         <TwoColorText
-          left="LOB"
-          right="BY"
+          right="PLAY"
           class="mt-5 text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 
-        <SignDiv :text="`Game Id : ${$store.state.Lobby.roomId}`" />
-        <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
+        <!-- <SignDiv :text="`Game Id : ${$store.state.Lobby.roomId}`" /> -->
+        <!-- <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" /> -->
         <div class="mt-5 flex gap-4">
           <BaseButton text="Leave Game" color="red" @click="leaveRoom" />
         </div>

@@ -3,6 +3,7 @@ import JoinGame from '@/views/JoinGame.vue';
 import NotFound from '@/views/NotFound.vue';
 import HostGame from '@/views/HostGame.vue';
 import Lobby from '@/views/Lobby.vue';
+import Play from '@/views/Play.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 
 const history = createWebHashHistory();
@@ -11,6 +12,7 @@ const routes = [
   { path: '/join-game', component: JoinGame },
   { path: '/host-game', component: HostGame },
   { path: '/lobby', component: Lobby },
+  { path: '/play', component: Play },
   { path: '/:path(.*)', component: NotFound },
 ];
 

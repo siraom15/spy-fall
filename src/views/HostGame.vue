@@ -24,17 +24,23 @@ export default {
       console.log(data);
       this.$store.dispatch('setPlayers', data.players);
     },
+    started_game: function (data) {
+      console.log(data);
+      this.$router.push('/play');
+    },
   },
   methods: {
-    setPlayer() {},
-    setRoomId(roomId) {
-      console.log(this.roomId);
-      this.roomId.value = roomId;
+    start_game: function () {
+      console.log('send start_game');
+      this.$socket.emit('start_game', {
+        roomId: this.$store.state.Lobby.roomId,
+      });
     },
   },
   beforeMount() {
     this.$socket.emit('create_room', {
       roomId: random(),
+      player: this.$store.state.Player,
     });
   },
 };
@@ -53,12 +59,9 @@ export default {
         <SignDiv :text="`Game Id : ${$store.state.Lobby.roomId}`" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
         <div class="mt-5 flex gap-4">
-          <router-link to="/play">
-            <BaseButton text="Start Game" color="green" />
-          </router-link>
-          <router-link to="/">
-            <BaseButton text="Leave Game" color="red" />
-          </router-link>
+          <BaseButton text="Start Game" color="green" @click="start_game" />
+
+          <BaseButton text="Leave Game" color="red" />
         </div>
       </div>
     </div>

@@ -23,6 +23,9 @@ export default {
     update_player_room: function (data) {
       console.log(data);
     },
+    failed_join_room: function (data){
+      alert(data.msg)
+    }
   },
   methods: {
     join_room() {
@@ -45,7 +48,7 @@ export default {
         />
 
         <form
-          @submit.prevent
+          @submit.prevent="join_room"
           class="flex flex-col justify-center gap-2 sm:flex-col md:flex-row lg:flex-row"
         >
           <input
@@ -55,7 +58,7 @@ export default {
             required
             v-model="roomId"
           />
-          <BaseButton text="Join Game" @click="join_room" />
+          <BaseButton text="Join Game" type="submit" />
         </form>
 
         <router-link to="/" class="mt-5">
