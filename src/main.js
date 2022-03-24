@@ -5,6 +5,7 @@ import router from './routes.js';
 import store from './store';
 import VueSocketIO from 'vue-3-socket.io';
 import SocketIO from 'socket.io-client';
+import i18n from '@/i18n';
 
 const vueio = new VueSocketIO({
   debug: true,
@@ -17,6 +18,7 @@ const vueio = new VueSocketIO({
 });
 
 const app = createApp(App);
+app.use(i18n);
 app.use(store);
 app.use(vueio);
 app.use(router);

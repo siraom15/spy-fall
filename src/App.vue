@@ -4,7 +4,7 @@ export default {
   sockets: {
     connection: function (data) {
       console.log(data);
-      this.$store.dispatch('setSocketId', data.socketId)
+      this.$store.dispatch('setSocketId', data.socketId);
     },
   },
 };
@@ -14,7 +14,8 @@ export default {
   <div>
     <main>
       <div class="text-white">
-      {{$store.state}}
+        {{ $tc('message.hello') }}
+        {{ $store.state }}
       </div>
       <router-view />
     </main>
