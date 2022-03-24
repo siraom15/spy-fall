@@ -3,6 +3,7 @@ import BaseButton from '@/components/BaseButton.vue';
 import TwoColorText from '@/components/TwoColorText.vue';
 import PlayerLobby from '@/components/PlayerLobby.vue';
 import SignDiv from '@/components/SignDiv.vue';
+import RoomSetting from '@/components/RoomSetting.vue';
 import random from '@/utils/random.js';
 import { ref } from '@vue/reactivity';
 
@@ -13,6 +14,7 @@ export default {
     TwoColorText,
     PlayerLobby,
     SignDiv,
+    RoomSetting,
   },
   sockets: {
     created_room: function (data) {
@@ -57,10 +59,11 @@ export default {
         />
 
         <SignDiv :text="`Game Id : ${$store.state.Lobby.roomId}`" />
+        <RoomSetting class="mt-2" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
+        <!-- <BaseButton text="Show Setting" color="red" /> -->
         <div class="mt-5 flex gap-4">
           <BaseButton text="Start Game" color="green" @click="start_game" />
-
           <BaseButton text="Leave Game" color="red" />
         </div>
       </div>
