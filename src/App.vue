@@ -25,9 +25,9 @@ export default {
 <template>
   <div>
     <main>
-      <!-- <div class="text-white">
+      <div class="text-white">
         {{ $store.state }}
-      </div> -->
+      </div>
       <ServerStatus :serverStatus="serverStatus" />
       <ChangeLang />
       <router-view />

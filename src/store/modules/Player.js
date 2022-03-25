@@ -1,7 +1,10 @@
-const state = {
-  socketId: '',
-  name: 'Good Name',
+const getDefaultState = () => {
+  return {
+    socketId: '',
+    name: 'Good Name',
+  };
 };
+const state = getDefaultState();
 
 const mutations = {
   SET_SOCKET_ID(state, socketId) {

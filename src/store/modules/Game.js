@@ -1,10 +1,13 @@
-const state = {
-  location: '',
-  role: '',
+const getDefaultState = () => {
+  return {
+    location: '',
+    role: '',
+  };
 };
+const state = getDefaultState();
 
 const mutations = {
-    SET_LOCATION(state, location) {
+  SET_LOCATION(state, location) {
     state.location = location;
   },
   SET_ROLE(state, role) {

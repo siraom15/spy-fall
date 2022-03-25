@@ -1,10 +1,13 @@
-const state = {
-  players: [],
-  roomId: null,
-  roomSetting: {
-    playTime: 5,
-  },
+const getDefaultState = () => {
+  return {
+    players: [],
+    roomId: null,
+    roomSetting: {
+      playTime: 5,
+    },
+  };
 };
+const state = getDefaultState();
 
 const mutations = {
   SET_PLAYERS(state, players) {
