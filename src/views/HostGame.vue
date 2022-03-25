@@ -53,18 +53,22 @@ export default {
     <div>
       <div class="flex flex-col items-center justify-center">
         <TwoColorText
-          left="HOST"
-          right=" GAME"
+          :left="$t('host')"
+          :right="` ` + $t('game')"
           class="mt-5 text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 
-        <SignDiv :text="`Game Id : ${$store.state.Lobby.roomId}`" />
+        <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
         <RoomSetting class="mt-2" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
         <!-- <BaseButton text="Show Setting" color="red" /> -->
         <div class="mt-5 flex gap-4">
-          <BaseButton text="Start Game" color="green" @click="start_game" />
-          <BaseButton text="Leave Game" color="red" />
+          <BaseButton
+            :text="$t('startGame')"
+            color="green"
+            @click="start_game"
+          />
+          <BaseButton :text="$t('leaveGame')" color="red" />
         </div>
       </div>
     </div>

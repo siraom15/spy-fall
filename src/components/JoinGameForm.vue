@@ -25,6 +25,6 @@ export default {
       required
       v-model="roomId"
     />
-    <BaseButton text="Join Game" @click="$emit('join_room', roomId)" />
+    <BaseButton :text="$t('joinGame')" @click="$emit('join_room', roomId)" />
   </form>
 </template>

@@ -48,10 +48,10 @@ export default {
           class="mt-5 text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 
-        <SignDiv :text="`Game Id : ${$store.state.Lobby.roomId}`" />
+        <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
         <div class="mt-5 flex gap-4">
-          <BaseButton text="Leave Game" color="red" @click="leaveRoom" />
+          <BaseButton :text="$t('leaveGame')" color="red" @click="leaveRoom" />
         </div>
       </div>
     </div>

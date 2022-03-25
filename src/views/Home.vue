@@ -21,10 +21,10 @@ import TwoColorText from '@/components/TwoColorText.vue';
 
         <div class="mt-5 flex gap-4">
           <router-link to="join-game">
-            <BaseButton text="Join Game" />
+            <BaseButton :text="$t('joinGame')" />
           </router-link>
           <router-link to="host-game">
-            <BaseButton text="Host Game" color="yellow" />
+            <BaseButton :text="$t('hostGame')" color="yellow" />
           </router-link>
         </div>
         <router-link to="how-to-play">
@@ -46,7 +46,7 @@ import TwoColorText from '@/components/TwoColorText.vue';
                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <p class="px-2 underline">HOW TO PLAY</p>
+            <p class="px-2 underline">{{$t('howToPlay')}}</p>
           </div>
         </router-link>
       </div>

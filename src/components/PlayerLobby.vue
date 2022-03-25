@@ -19,7 +19,7 @@ export default {
       class="hover:bg-blue-light max-w-md border-b-4 border-yellow-400 bg-yellow-300 p-10 py-2 px-4 font-bungee"
     >
       <div class="mb-4 flex items-center justify-between">
-        <h3 class="leading-none text-gray-900">Player In Lobby</h3>
+        <h3 class="leading-none text-gray-900">{{$t('playerInLobby')}}</h3>
       </div>
       <div class="flow-root">
         <ul role="list" class="divide-y divide-yellow-400">

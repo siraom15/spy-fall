@@ -45,8 +45,8 @@ export default {
     <div>
       <div class="flex flex-col items-center justify-center">
         <TwoColorText
-          left="JOIN"
-          right=" GAME"
+          :left="$t('join')"
+          :right="` `+$t('game')"
           class="text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 
@@ -56,12 +56,12 @@ export default {
         >
           <input
             type="text"
-            placeholder="Input Room Id"
+            :placeholder="$t('inputRoomId')"
             class="hover:bg-blue-light h-auto w-auto rounded border-b-4 border-yellow-400 bg-yellow-300 font-bungee text-red-600 placeholder-yellow-500 hover:border-red-600 focus:border-red-600"
             required
             v-model="roomId"
           />
-          <BaseButton text="Join Game" type="submit" />
+          <BaseButton :text="$t('joinGame')" type="submit" />
         </form>
 
         <router-link to="/" class="mt-5">

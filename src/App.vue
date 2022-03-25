@@ -1,6 +1,10 @@
 <script>
+import ChangeLang from '@/components/ChangeLang.vue'
 export default {
   name: 'App',
+  components:{
+    ChangeLang
+  },
   sockets: {
     connection: function (data) {
       console.log(data);
@@ -13,10 +17,10 @@ export default {
 <template>
   <div>
     <main>
-      <div class="text-white">
-        {{ $tc('message.hello') }}
+      <!-- <div class="text-white">
         {{ $store.state }}
-      </div>
+      </div> -->
+      <ChangeLang />
       <router-view />
     </main>
   </div>

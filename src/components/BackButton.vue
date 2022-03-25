@@ -19,7 +19,7 @@
           d="M11 17l-5-5m0 0l5-5m-5 5h12"
         />
       </svg>
-      <p class="underline">Back</p>
+      <p class="underline">{{$t('back')}}</p>
     </div>
   </button>
 </template>

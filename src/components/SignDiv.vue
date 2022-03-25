@@ -22,7 +22,7 @@ const bgClass = {
   ],
   green: [
     'bg-green-400',
-    'border-emerald-500 ',
+    'border-emerald-500',
     'text-white',
   ],
   visible: [],
