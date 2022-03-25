@@ -3,19 +3,8 @@ import './tailwind.css';
 import App from './App.vue';
 import router from './routes.js';
 import store from './store';
-import VueSocketIO from 'vue-3-socket.io';
-import SocketIO from 'socket.io-client';
 import i18n from '@/i18n';
-
-const vueio = new VueSocketIO({
-  debug: true,
-  connection: SocketIO('http://localhost:4000'),
-  vuex: {
-    store,
-    actionPrefix: 'SOCKET_',
-    mutationPrefix: 'SOCKET_',
-  },
-});
+import vueio from './socket';
 
 const app = createApp(App);
 app.use(i18n);
