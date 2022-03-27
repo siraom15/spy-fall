@@ -26,6 +26,11 @@ export default {
     failed_join_room: function (data) {
       alert(data.msg);
     },
+    updated_play_time: function (data) {
+      this.$store.dispatch('setRoomSetting', {
+        playTime: data.playTime,
+      });
+    },
   },
   methods: {
     join_room() {
@@ -46,7 +51,7 @@ export default {
       <div class="flex flex-col items-center justify-center">
         <TwoColorText
           :left="$t('join')"
-          :right="` `+$t('game')"
+          :right="` ` + $t('game')"
           class="text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 

@@ -49,6 +49,12 @@ export default {
       });
       this.$router.push('/');
     },
+    update_play_time: function () {
+      this.$socket.emit('update_play_time', {
+        roomId: this.$store.state.Lobby.roomId,
+        playTime:  this.$store.state.Lobby.roomSetting.playTime,
+      });
+    },
   },
   beforeMount() {
     this.$socket.emit('create_room', {
