@@ -1,7 +1,7 @@
 const getDefaultState = () => {
   return {
     players: [],
-    roomId: null,
+    roomId: '',
     roomSetting: {
       playTime: 5,
     },

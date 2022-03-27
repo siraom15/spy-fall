@@ -5,49 +5,23 @@ import BackButton from '@/components/BackButton.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import { ref } from '@vue/reactivity';
 export default {
-  name: 'JoinGame',
+  name: 'SetName',
   setup() {},
   data() {
     return {
-      roomId: ref(''),
+      name: ref(''),
     };
   },
   components: { TwoColorText, JoinGameForm, BackButton, BaseButton },
   sockets: {
-    joined_room: function (data) {
-      console.log(data);
-      this.$store.dispatch('setRoomId', data.roomId);
-      this.$store.dispatch('setPlayers', data.players);
-      this.$router.push('/lobby');
-    },
-    update_player_room: function (data) {
-      console.log(data);
-    },
-    failed_join_room: function (data) {
-      alert(data.msg);
-    },
-    updated_play_time: function (data) {
-      this.$store.dispatch('setRoomSetting', {
-        playTime: data.playTime,
-      });
-    },
   },
   methods: {
-    join_room() {
-      if (!this.$store.state.Server.serverStatus) {
-        alert(this.$t('serverError'));
-        return;
-      }
-      this.$socket.emit('join_room', {
-        roomId: this.roomId,
-        player: this.$store.state.Player,
-      });
-    },
+      set_name: function() {
+        this.$store.dispatch('setName', this.name);
+        this.$router.go(-1);
+      },
   },
   beforeMount() {
-    if(!this.$store.state.Player.name) {
-      this.$router.push('/set-name');
-    }
   },
 };
 </script>
@@ -57,23 +31,23 @@ export default {
     <div>
       <div class="flex flex-col items-center justify-center">
         <TwoColorText
-          :left="$t('join')"
-          :right="` ` + $t('game')"
+          :left="$t('set')"
+          :right="` ` + $t('name')"
           class="text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
 
         <form
-          @submit.prevent="join_room"
+          @submit.prevent="set_name"
           class="flex flex-col justify-center gap-2 sm:flex-col md:flex-row lg:flex-row"
         >
           <input
             type="text"
-            :placeholder="$t('inputRoomId')"
+            :placeholder="$t('inputName')"
             class="hover:bg-blue-light h-auto w-auto rounded border-b-4 border-yellow-400 bg-yellow-300 font-bungee text-red-600 placeholder-yellow-500 hover:border-red-600 focus:border-red-600"
             required
-            v-model="roomId"
+            v-model="name"
           />
-          <BaseButton :text="$t('joinGame')" type="submit" />
+          <BaseButton :text="$t('next')" type="submit" />
         </form>
 
         <router-link to="/" class="mt-5">

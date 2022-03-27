@@ -1,7 +1,7 @@
 const getDefaultState = () => {
   return {
     socketId: '',
-    name: 'Good Name',
+    name: '',
   };
 };
 const state = getDefaultState();

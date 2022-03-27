@@ -27,7 +27,7 @@ export default {
             <div class="flex items-center space-x-4">
               <div class="min-w-0 flex-1">
                 <p class="truncate text-center font-medium text-gray-900">
-                  {{ index + 1 }} : {{ player.socketId }}
+                  {{ index + 1 }} : {{ player.name }}
                 </p>
               </div>
               <div

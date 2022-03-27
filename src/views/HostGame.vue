@@ -39,6 +39,7 @@ export default {
       console.log('send start_game');
       this.$socket.emit('start_game', {
         roomId: this.$store.state.Lobby.roomId,
+        playTime: this.$store.state.Lobby.roomSetting.playTime,
       });
     },
     delete_game: function () {

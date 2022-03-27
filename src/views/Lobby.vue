@@ -23,8 +23,11 @@ export default {
     left_room: function (data) {
       console.log(data);
     },
-    started_game: function (data) {
+    started_game: async function (data) {
       console.log(data);
+      await this.$store.dispatch('setRoomSetting', {
+        playTime: data.playTime,
+      });
       this.$router.push('/play');
     },
     updated_play_time: function (data) {
@@ -48,7 +51,7 @@ export default {
     },
   },
   beforeMount() {
-    if(this.$store.state.Lobby.roomId === null) {
+    if(this.$store.state.Lobby.roomId === '') {
       this.$router.push('/');
     }
   },
