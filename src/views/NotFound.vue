@@ -9,12 +9,12 @@ import TwoColorText from '@/components/TwoColorText.vue';
       <div class="flex flex-col justify-center items-center">
        
         <TwoColorText
-          left="PAGE NOT FOUND"
+          :left="$t('pageNotFound')"
           class="text-3xl sm:text-5xl md:text-5xl lg:text-7xl mt-5"
         />
         <div class="mt-5 flex gap-4">
           <router-link to="/">
-            <BaseButton text="Go To Home" />
+            <BaseButton :text="$t('goToHome')" />
           </router-link>
         </div>
       </div>

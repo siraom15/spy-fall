@@ -44,7 +44,7 @@ export default {
     },
   },
   beforeMount() {
-    console.log(this.$route.query); // outputs 'yay'
+    
   },
 };
 </script>

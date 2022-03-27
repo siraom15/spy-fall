@@ -67,7 +67,6 @@ export default {
           :right="` ` + $t('game')"
           class="mt-5 text-2xl sm:text-4xl md:text-4xl lg:text-7xl"
         />
-
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
         <RoomSetting class="mt-2" :isHost="true" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />

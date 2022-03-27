@@ -38,7 +38,11 @@ export default {
       immediate: true,
     },
   },
-  beforeMount() {},
+  beforeMount() {
+    // if(this.$store.state.Lobby.roomId === null) {
+    //   this.$router.push('/');
+    // }
+  },
 };
 </script>
 
@@ -46,6 +50,8 @@ export default {
   <div class="flex h-screen items-center justify-center">
     <div>
       <div class="flex flex-col items-center justify-center gap-10">
+        <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
+
         <SignDiv
           :text="`${$t('timeLeft')} :  ${playTimeInSec}`"
           class="text-base sm:text-xl md:text-xl lg:text-2xl"
@@ -58,19 +64,18 @@ export default {
         />
         <TwoColorText
           :left="`${$t('yourRole')} : `"
-          :right="$store.state.Game.role"
+          :right="$t($store.state.Game.role)"
           class="text-xl sm:text-2xl md:text-2xl lg:text-3xl"
         />
         <TwoColorText
           :left="`${$t('yourLocation')} : `"
-          :right="$store.state.Game.location"
+          :right="$t($store.state.Game.location)"
           class="text-xl sm:text-2xl md:text-2xl lg:text-3xl"
         />
-        {{ $t('roles.spy') }}
-        <!-- <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" /> -->
-        <!-- <div class="mt-5 flex gap-4">
+        <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
+        <div class="mt-5 flex gap-4">
           <BaseButton :text="$t('leaveGame')" color="red" @click="leaveRoom" />
-        </div> -->
+        </div>
       </div>
     </div>
   </div>

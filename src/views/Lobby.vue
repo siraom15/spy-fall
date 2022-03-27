@@ -47,7 +47,11 @@ export default {
       this.$router.push('/');
     },
   },
-  beforeMount() {},
+  beforeMount() {
+    if(this.$store.state.Lobby.roomId === null) {
+      this.$router.push('/');
+    }
+  },
 };
 </script>
 

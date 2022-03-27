@@ -12,7 +12,7 @@ export default {
       this.$store.dispatch('setSocketId', data.socketId);
       this.$store.dispatch('setServerStatus', true);
     },
-    disconnect: function (data) {
+    disconnect: function () {
       this.$store.dispatch('setServerStatus', false);
     },
   },
@@ -22,9 +22,9 @@ export default {
 <template>
   <div>
     <main>
-      <!-- <div class="text-white">
+      <div class="text-white">
         {{ $store.state }}
-      </div> -->
+      </div>
       <ServerStatus />
       <ChangeLang />
       <router-view />

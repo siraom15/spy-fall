@@ -20,6 +20,8 @@ const messages = {
     yourRole: 'Your Role',
     yourLocation: 'Your Location',
     hostDeletedGame: 'Host deleted game',
+    pageNotFound: 'Page not found',
+    goToHome: 'Go to home',
     roles: {
       spy: 'Spy',
       firstClassPassenger: 'First Class Passenger',
@@ -37,6 +39,7 @@ const messages = {
       teller: 'Teller',
     },
     location: {
+      spy: 'Spy',
       airport: 'Airport',
       airplane: 'Airplane',
       bank: 'Bank',
@@ -63,6 +66,8 @@ const messages = {
     yourRole: 'บทบาทของคุณ',
     yourLocation: 'สถานที่ของคุณ',
     hostDeletedGame: 'ห้องถูกลบ',
+    pageNotFound: 'ไม่พบหน้านี้',
+    goToHome: 'กลับสู่หน้าหลัก',
     roles: {
       spy: 'สายลับ',
       firstClassPassenger: 'ผู้โดยสารชั้น 1',
@@ -80,6 +85,7 @@ const messages = {
       teller: 'Teller',
     },
     location: {
+      spy: 'สายลับ',
       airport: 'สนามบิน',
       airplane: 'เครื่องบิน',
       bank: 'ธนาคาร',
