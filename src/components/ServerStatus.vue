@@ -1,12 +1,6 @@
 <script>
 export default {
   name: 'ServerStatus',
-  props: {
-    serverStatus: {
-      type: Boolean,
-      default: false,
-    },
-  },
 };
 </script>
 
@@ -14,7 +8,7 @@ export default {
   <div
     class="space-x absolute top-20 right-5 flex w-full max-w-xs items-center space-x-4 divide-x divide-gray-200 rounded-lg p-4 shadow"
     :class="
-      serverStatus
+      $store.state.Server.serverStatus
         ? ['bg-green-400', 'text-white', 'hidden']
         : ['bg-red-600', 'text-white']
     "
@@ -35,7 +29,7 @@ export default {
           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
-      {{ serverStatus ? 'Connected To Server' : 'Server Error' }}
+      {{ $store.state.Server.serverStatus ? '' : $t('serverError') }}
     </div>
   </div>
 </template>

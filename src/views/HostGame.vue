@@ -33,10 +33,21 @@ export default {
   },
   methods: {
     start_game: function () {
+      if (!this.$store.state.Server.serverStatus) {
+        alert(this.$t('serverError'));
+        return;
+      }
       console.log('send start_game');
       this.$socket.emit('start_game', {
         roomId: this.$store.state.Lobby.roomId,
       });
+    },
+    delete_game: function () {
+      console.log(`send end game`);
+      this.$socket.emit('delete_game', {
+        roomId: this.$store.state.Lobby.roomId,
+      });
+      this.$router.push('/');
     },
   },
   beforeMount() {
@@ -68,7 +79,11 @@ export default {
             color="green"
             @click="start_game"
           />
-          <BaseButton :text="$t('leaveGame')" color="red" />
+          <BaseButton
+            :text="$t('leaveGame')"
+            color="red"
+            @click="delete_game"
+          />
         </div>
       </div>
     </div>

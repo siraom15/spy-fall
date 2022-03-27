@@ -15,6 +15,7 @@ const messages = {
     leaveGame: 'Leave Game',
     inputRoomId: 'Input Room ID',
     gameId: 'Game ID',
+    serverError: 'Server error',
   },
   th: {
     gameName: 'ภารกิจพิชิตสายลับ',
@@ -32,6 +33,7 @@ const messages = {
     leaveGame: 'ออกจากห้อง',
     inputRoomId: 'กรอกรหัสห้อง',
     gameId: 'รหัสห้อง',
+    serverError: 'เกิดข้อผิดพลาดในการเชื่อมต่อ',
   },
 };
 export default messages;
