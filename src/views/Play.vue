@@ -49,7 +49,7 @@ export default {
 <template>
   <div class="flex h-screen items-center justify-center">
     <div>
-      <div class="flex flex-col items-center justify-center gap-10">
+      <div class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-10 xl:gap-12 2xl:gap-14">
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
 
         <SignDiv
