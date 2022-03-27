@@ -3,6 +3,7 @@ import BaseButton from '@/components/BaseButton.vue';
 import TwoColorText from '@/components/TwoColorText.vue';
 import PlayerLobby from '@/components/PlayerLobby.vue';
 import SignDiv from '@/components/SignDiv.vue';
+import RoomSetting from '@/components/RoomSetting.vue';
 import { ref } from '@vue/reactivity';
 
 export default {
@@ -12,6 +13,7 @@ export default {
     TwoColorText,
     PlayerLobby,
     SignDiv,
+    RoomSetting,
   },
   sockets: {
     update_player_room: function (data) {
@@ -24,6 +26,17 @@ export default {
     started_game: function (data) {
       console.log(data);
       this.$router.push('/play');
+    },
+    updated_play_time: function (data) {
+      console.log(data);
+      this.$store.dispatch('setRoomSetting', {
+        playTime: data.playTime,
+      });
+    },
+    deleted_game: function (data) {
+      console.log(data);
+      alert(this.$t('hostDeletedGame'))
+      this.$router.push('/');
     },
   },
   methods: {
@@ -49,6 +62,7 @@ export default {
         />
 
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
+        <RoomSetting class="mt-2" :isHost="false" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
         <div class="mt-5 flex gap-4">
           <BaseButton :text="$t('leaveGame')" color="red" @click="leaveRoom" />

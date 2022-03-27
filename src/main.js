@@ -12,3 +12,4 @@ app.use(store);
 app.use(vueio);
 app.use(router);
 app.mount('#app');
+

@@ -34,6 +34,10 @@ export default {
   },
   methods: {
     join_room() {
+      if (!this.$store.state.Server.serverStatus) {
+        alert(this.$t('serverError'));
+        return;
+      }
       this.$socket.emit('join_room', {
         roomId: this.roomId,
       });

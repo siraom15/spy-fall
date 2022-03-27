@@ -5,7 +5,6 @@ import PlayerLobby from '@/components/PlayerLobby.vue';
 import SignDiv from '@/components/SignDiv.vue';
 import RoomSetting from '@/components/RoomSetting.vue';
 import random from '@/utils/random.js';
-import { ref } from '@vue/reactivity';
 
 export default {
   name: 'HostGame',
@@ -49,12 +48,6 @@ export default {
       });
       this.$router.push('/');
     },
-    update_play_time: function () {
-      this.$socket.emit('update_play_time', {
-        roomId: this.$store.state.Lobby.roomId,
-        playTime:  this.$store.state.Lobby.roomSetting.playTime,
-      });
-    },
   },
   beforeMount() {
     this.$socket.emit('create_room', {
@@ -76,9 +69,8 @@ export default {
         />
 
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
-        <RoomSetting class="mt-2" />
+        <RoomSetting class="mt-2" :isHost="true" />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
-        <!-- <BaseButton text="Show Setting" color="red" /> -->
         <div class="mt-5 flex gap-4">
           <BaseButton
             :text="$t('startGame')"
