@@ -19,7 +19,9 @@ export default {
   sockets: {},
   methods: {},
   watch: {},
-  beforeMount() {},
+  beforeMount() {
+      
+  },
 };
 </script>
 
@@ -32,7 +34,7 @@ export default {
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
 
         <SignDiv
-          :text="`VOTE`"
+          :text="`${$t('vote')}`"
           class="text-base sm:text-xl md:text-xl lg:text-2xl"
         />
 

@@ -29,6 +29,7 @@ const messages = {
     next: 'Next',
     joinRoomFailed: 'Join Room Fail',
     noRoomExist: 'No Room Exist',
+    vote: 'Vote',
     roles: {
       spy: 'Spy',
 
@@ -325,6 +326,7 @@ const messages = {
     next: 'ไปต่อ',
     joinRoomFailed: 'เข้าร่วมห้องล้มเหลว',
     noRoomExist: 'ไม่พบห้องนี้',
+    vote: 'โหวต',
     roles: {
       spy: 'สายลับ',
 
