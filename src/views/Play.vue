@@ -24,8 +24,22 @@ export default {
       this.$store.dispatch('setLocation', data.location);
       this.$store.dispatch('setRole', data.role.name);
     },
+    update_player_room: function (data) {
+      console.log(data);
+      this.$store.dispatch('setPlayers', data.players);
+    },
+    left_room: function (data) {
+      console.log(data);
+    },
   },
-  methods: {},
+  methods: {
+    leaveRoom() {
+      this.$socket.emit('leave_room', {
+        roomId: this.$store.state.Lobby.roomId,
+      });
+      this.$router.push('/');
+    },
+  },
   watch: {
     playTimeInSec: {
       handler(newPlayTimeInSec) {

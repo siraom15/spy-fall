@@ -39,7 +39,7 @@ export default {
         return;
       }
       this.$socket.emit('join_room', {
-        roomId: this.roomId,
+        roomId: this.roomId.toUpperCase(),
         player: this.$store.state.Player,
       });
     },

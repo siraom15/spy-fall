@@ -26,7 +26,7 @@ export default {
           <li class="py-3" v-for="(player, index) in players" :key="index">
             <div class="flex items-center space-x-4">
               <div class="min-w-0 flex-1">
-                <p class="truncate text-center font-medium text-gray-900">
+                <p class="truncate text-left font-medium text-gray-900">
                   {{ index + 1 }} : {{ player.name }}
                 </p>
               </div>
