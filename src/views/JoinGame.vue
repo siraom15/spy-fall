@@ -69,7 +69,7 @@ export default {
           <input
             type="text"
             :placeholder="$t('inputRoomId')"
-            class="hover:bg-blue-light h-auto w-auto rounded border-b-4 border-yellow-400 bg-yellow-300 font-bungee text-red-600 placeholder-yellow-500 hover:border-red-600 focus:border-red-600"
+            class="hover:bg-blue-light h-auto w-auto rounded border-b-4 border-yellow-400 bg-yellow-300  text-red-600 placeholder-yellow-500 hover:border-red-600 focus:border-red-600"
             required
             v-model="roomId"
           />

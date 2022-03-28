@@ -10,7 +10,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="text-2xl font-bungee" >
+  <div class="text-2xl " >
     <span class="text-yellow-300"> {{ left }} </span>
     <span class="text-red-600"> {{ right }} </span>
   </div>

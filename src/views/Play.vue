@@ -49,7 +49,7 @@ export default {
 <template>
   <div class="flex h-screen items-center justify-center">
     <div>
-      <div class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-10 xl:gap-12 2xl:gap-14">
+      <div class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4">
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
 
         <SignDiv
@@ -60,7 +60,7 @@ export default {
           src="/assets/images/spy.png"
           alt=""
           srcset=""
-          class="w-36 sm:w-40 md:w-44 lg:w-48"
+          class="w-36 sm:w-40 md:w-40 lg:w-48"
         />
         <TwoColorText
           :left="`${$t('yourRole')} : `"

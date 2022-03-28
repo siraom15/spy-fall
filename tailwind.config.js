@@ -1,4 +1,4 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 /** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
 module.exports = {
@@ -6,13 +6,20 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'fade-in': 'fadeIn 0.5s',
-        'fade-out': '1 0.5s ease-in-out',
+        fade: 'fadeOut 5s ease-in-out',
       },
+      keyframes: (theme) => ({
+        fadeOut: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
+      }),
       fontFamily: {
-        sans: ['"Inter var"', ...defaultTheme.fontFamily.sans],
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
         anton: ['Anton', 'sans-serif'],
-        bungee: ['Bungee', 'cursive'],
+        bungee: ['Bungee','Mitr', 'cursive'],
+        prompt: ['Prompt', 'sans-serif'],
+        mitr: ['Mitr', 'sans-serif'],
       },
     },
   },
@@ -22,4 +29,4 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
   ],
-}
+};

@@ -20,7 +20,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="font-bungee">
     <main>
       <!-- <div class="text-white">
         {{ $store.state }}

@@ -19,7 +19,7 @@ const bgClass = {
 
 <template>
   <div
-    class="border-b-4 border-r-4 py-1 px-4 text-center font-bungee text-xs sm:text-xs md:text-xs lg:text-lg"
+    class="border-b-4 border-r-4 py-1 px-4 text-center  text-xs sm:text-xs md:text-xs lg:text-lg"
     :class="[bgClass[props.color]]"
   >
     <span>{{ props.text }}</span>

@@ -48,7 +48,7 @@ export default {
 <template>
   <div class="mx-auto max-w-2xl text-xs sm:text-xs md:text-base lg:text-lg">
     <div
-      class="hover:bg-blue-light max-w-md border-b-4 border-yellow-400 bg-yellow-300 p-10 py-2 px-4 font-bungee"
+      class="hover:bg-blue-light max-w-md border-b-4 border-yellow-400 bg-yellow-300 p-10 py-2 px-4 "
     >
       <div class="mb-4 flex items-center justify-between">
         <h3 class="leading-none text-gray-900">{{ $t('roomSettings') }}</h3>
