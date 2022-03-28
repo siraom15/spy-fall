@@ -29,7 +29,7 @@ import TwoColorText from '@/components/TwoColorText.vue';
         </div>
         <router-link to="how-to-play">
           <div
-            class="font-bungee hover:bg-blue-light mt-5 text-white py-2 px-4 rounded flex"
+            class=" hover:bg-blue-light mt-5 text-white py-2 px-4 rounded flex"
           >
             &nbsp;
             <svg

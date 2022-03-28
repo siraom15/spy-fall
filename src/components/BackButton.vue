@@ -2,7 +2,7 @@
 
 <template>
   <button
-    class="font-bungee hover:bg-blue-light text-white py-2 px-4 hover:border-blue rounded"
+    class="hover:bg-blue-light text-white py-2 px-4 hover:border-blue rounded"
   >
     <div class="flex gap-1">
       <svg

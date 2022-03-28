@@ -48,7 +48,7 @@ export default {
 
 <template>
   <button
-    class="rounded border-b-4 border-r-4 font-bungee text-xs text-white shadow-sm shadow-slate-700 w-14 sm:w-12 sm:text-xs md:w-16 md:text-xs lg:w-22 lg:text-base xl:w-22 xl:text-lg"
+    class="rounded border-b-4 border-r-4  text-xs text-white shadow-sm shadow-slate-700 w-14 sm:w-12 sm:text-xs md:w-16 md:text-xs lg:w-22 lg:text-base xl:w-22 xl:text-lg"
     :class="[btnClass[color]]"
   >
     {{ text }}

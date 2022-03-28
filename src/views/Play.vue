@@ -24,8 +24,22 @@ export default {
       this.$store.dispatch('setLocation', data.location);
       this.$store.dispatch('setRole', data.role.name);
     },
+    update_player_room: function (data) {
+      console.log(data);
+      this.$store.dispatch('setPlayers', data.players);
+    },
+    left_room: function (data) {
+      console.log(data);
+    },
   },
-  methods: {},
+  methods: {
+    leaveRoom() {
+      this.$socket.emit('leave_room', {
+        roomId: this.$store.state.Lobby.roomId,
+      });
+      this.$router.push('/');
+    },
+  },
   watch: {
     playTimeInSec: {
       handler(newPlayTimeInSec) {
@@ -49,7 +63,7 @@ export default {
 <template>
   <div class="flex h-screen items-center justify-center">
     <div>
-      <div class="flex flex-col items-center justify-center gap-10">
+      <div class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4">
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
 
         <SignDiv
@@ -60,7 +74,7 @@ export default {
           src="/assets/images/spy.png"
           alt=""
           srcset=""
-          class="w-36 sm:w-40 md:w-44 lg:w-48"
+          class="w-36 sm:w-40 md:w-40 lg:w-48"
         />
         <TwoColorText
           :left="`${$t('yourRole')} : `"

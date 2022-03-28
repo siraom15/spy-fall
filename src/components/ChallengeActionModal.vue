@@ -15,7 +15,7 @@ const props = defineProps({
 <template>
   <div>
     <div
-      class="fixed z-10 inset-0 overflow-y-auto font-bungee"
+      class="fixed z-10 inset-0 overflow-y-auto "
       role="dialog"
       :hidden="isShow"
     >

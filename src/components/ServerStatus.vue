@@ -10,11 +10,11 @@ export default {
     :class="
       $store.state.Server.serverStatus
         ? ['bg-green-400', 'text-white']
-        : ['bg-red-600', 'text-white']
+        : ['bg-red-600', 'text-white', 'animate-pulse']
     "
     role="alert"
   >
-    <div class="text-md flex gap-2 font-bungee font-normal">
+    <div class="text-md flex gap-2  font-normal">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="h-6 w-6"
@@ -29,7 +29,11 @@ export default {
           d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       </svg>
-      {{ $store.state.Server.serverStatus ? $t('serverConnected') : $t('serverError') }}
+      {{
+        $store.state.Server.serverStatus
+          ? $t('serverConnected')
+          : $t('serverError')
+      }}
     </div>
   </div>
 </template>

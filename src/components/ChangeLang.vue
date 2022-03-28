@@ -7,7 +7,7 @@ export default {
 };
 </script>
 <template>
-  <div class="flex items-center justify-end text-right font-bungee bg-red-600 text-white">
+  <div class="flex items-center justify-end text-right bg-red-600 text-white">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="h-6 w-6"
@@ -22,10 +22,11 @@ export default {
         d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"
       />
     </svg>
-    <select v-model="$i18n.locale" class="border-0 focus:border-0 bg-red-600 hover:bg-yellow-300 hover:text-red-600">
+    <select v-model="$i18n.locale" class="p-2 border-0 focus:border-0 bg-red-600 hover:bg-yellow-300 hover:text-red-600">
       <option v-for="(lang, i) in langs" :key="`Lang${i}`" :value="lang">
         {{ lang }}
       </option>
     </select>
+    <a href="https://github.com/siraom15" target="_blank" class="text-sm p-4 hover:bg-yellow-300 hover:text-red-600">Github</a>
   </div>
 </template>

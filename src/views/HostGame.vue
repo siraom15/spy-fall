@@ -5,6 +5,7 @@ import PlayerLobby from '@/components/PlayerLobby.vue';
 import SignDiv from '@/components/SignDiv.vue';
 import RoomSetting from '@/components/RoomSetting.vue';
 import random from '@/utils/random.js';
+import router from '@/routes';
 
 export default {
   name: 'HostGame',
@@ -51,6 +52,14 @@ export default {
     },
   },
   beforeMount() {
+    if (!this.$store.state.Server.serverStatus) {
+      alert(this.$t('serverError'));
+      this.$router.push('/');
+      return;
+    }
+    if (!this.$store.state.Player.name) {
+      this.$router.push('/set-name');
+    }
     this.$socket.emit('create_room', {
       roomId: random(),
       player: this.$store.state.Player,
@@ -73,14 +82,14 @@ export default {
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
         <div class="mt-5 flex gap-4">
           <BaseButton
-            :text="$t('startGame')"
-            color="green"
-            @click="start_game"
-          />
-          <BaseButton
             :text="$t('leaveGame')"
             color="red"
             @click="delete_game"
+          />
+          <BaseButton
+            :text="$t('startGame')"
+            color="green"
+            @click="start_game"
           />
         </div>
       </div>
