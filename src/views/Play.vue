@@ -31,7 +31,7 @@ export default {
     left_room: function (data) {
       console.log(data);
     },
-    end_game: function (data) {
+    ended_game: function (data) {
       console.log(data);
       this.$router.push('/vote');
     },
