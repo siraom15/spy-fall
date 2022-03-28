@@ -31,6 +31,10 @@ export default {
     left_room: function (data) {
       console.log(data);
     },
+    end_game: function (data) {
+      console.log(data);
+      this.$router.push('/vote');
+    },
   },
   methods: {
     leaveRoom() {
@@ -48,12 +52,17 @@ export default {
             this.playTimeInSec--;
           }, 1000);
         }
+        if (newPlayTimeInSec <= 0) {
+          this.$socket.emit('end_game', {
+            roomId: this.$store.state.Lobby.roomId,
+          });
+        }
       },
       immediate: true,
     },
   },
   beforeMount() {
-    if(this.$store.state.Lobby.roomId === '') {
+    if (this.$store.state.Lobby.roomId === '') {
       this.$router.push('/');
     }
   },
@@ -63,7 +72,9 @@ export default {
 <template>
   <div class="flex h-screen items-center justify-center">
     <div>
-      <div class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4">
+      <div
+        class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4"
+      >
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
 
         <SignDiv
