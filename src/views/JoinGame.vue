@@ -24,7 +24,7 @@ export default {
       console.log(data);
     },
     failed_join_room: function (data) {
-      alert(data.msg);
+      alert(this.$t('joinRoomFailed') + ` ( ` + this.$t('noRoomExist') + ` )`);
     },
     updated_play_time: function (data) {
       this.$store.dispatch('setRoomSetting', {
@@ -45,7 +45,7 @@ export default {
     },
   },
   beforeMount() {
-    if(!this.$store.state.Player.name) {
+    if (!this.$store.state.Player.name) {
       this.$router.push('/set-name');
     }
   },
@@ -69,7 +69,7 @@ export default {
           <input
             type="text"
             :placeholder="$t('inputRoomId')"
-            class="hover:bg-blue-light h-auto w-auto rounded border-b-4 border-yellow-400 bg-yellow-300  text-red-600 placeholder-yellow-500 hover:border-red-600 focus:border-red-600"
+            class="hover:bg-blue-light h-auto w-auto rounded border-b-4 border-yellow-400 bg-yellow-300 text-red-600 placeholder-yellow-500 hover:border-red-600 focus:border-red-600"
             required
             v-model="roomId"
           />

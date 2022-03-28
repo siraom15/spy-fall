@@ -27,7 +27,7 @@ const messages = {
     name: 'Name',
     inputName: 'Input Name',
     next:'Next',
-    joinRoomFail: 'Join Room Fail',
+    joinRoomFailed: 'Join Room Fail',
     noRoomExist: 'No Room Exist',
     roles: {
       spy: 'Spy',
@@ -80,7 +80,7 @@ const messages = {
     name: 'ชื่อเล่น',
     inputName: 'กรอกชื่อเล่น',
     next:'ไปต่อ',
-    joinRoomFail: 'เข้าร่วมห้องล้มเหลว',
+    joinRoomFailed: 'เข้าร่วมห้องล้มเหลว',
     noRoomExist: 'ไม่พบห้องนี้',
     roles: {
       spy: 'สายลับ',
