@@ -53,7 +53,6 @@ export default {
   },
   beforeMount() {
     if (!this.$store.state.Server.serverStatus) {
-      alert(this.$t('serverError'));
       this.$router.push('/');
       return;
     }

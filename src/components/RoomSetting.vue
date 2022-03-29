@@ -2,7 +2,6 @@
 import SignDiv from '@/components/SignDiv.vue';
 import BaseButton from '@/components/BaseButton.vue';
 import SmallBaseButton from '@/components/SmallBaseButton.vue';
-import { ref } from '@vue/reactivity';
 
 export default {
   name: 'RoomSetting',
@@ -20,12 +19,6 @@ export default {
   components: { SignDiv, BaseButton, SmallBaseButton },
   watch: {
     playTime(newPlayTime) {
-      if (newPlayTime < 1) {
-        newPlayTime = 1;
-      }
-      if (newPlayTime > 15) {
-        newPlayTime = 15;
-      }
       this.playTime = newPlayTime < 1 ? 1 : newPlayTime > 15 ? 15 : newPlayTime;
       this.$store.dispatch('setRoomSetting', {
         playTime: newPlayTime,

@@ -1,7 +1,7 @@
 <script>
 import BaseButton from '@/components/BaseButton.vue';
 import TwoColorText from '@/components/TwoColorText.vue';
-import PlayerLobby from '@/components/PlayerLobby.vue';
+import VotePlayer from '@/components/VotePlayer.vue';
 import SignDiv from '@/components/SignDiv.vue';
 import { ref } from '@vue/reactivity';
 
@@ -13,7 +13,7 @@ export default {
   components: {
     BaseButton,
     TwoColorText,
-    PlayerLobby,
+    VotePlayer,
     SignDiv,
   },
   sockets: {},
@@ -38,7 +38,7 @@ export default {
           class="text-base sm:text-xl md:text-xl lg:text-2xl"
         />
 
-        <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
+        <VotePlayer class="mt-2" :players="$store.state.Lobby.players" />
         <div class="mt-5 flex gap-4">
           <BaseButton :text="$t('leaveGame')" color="red" @click="leaveRoom" />
         </div>
