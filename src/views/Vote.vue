@@ -19,9 +19,7 @@ export default {
   sockets: {},
   methods: {},
   watch: {},
-  beforeMount() {
-      
-  },
+  beforeMount() {},
 };
 </script>
 
@@ -38,7 +36,7 @@ export default {
           class="text-base sm:text-xl md:text-xl lg:text-2xl"
         />
 
-        <VotePlayer class="mt-2" :players="$store.state.Lobby.players" />
+        <VotePlayer class="mt-2" />
         <div class="mt-5 flex gap-4">
           <BaseButton :text="$t('leaveGame')" color="red" @click="leaveRoom" />
         </div>
