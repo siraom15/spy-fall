@@ -34,7 +34,7 @@ export default {
         <ul role="list" class="divide-y divide-yellow-400">
           <li class="py-3 px-2" v-for="(player, index) in players" :key="index">
             <div class="flex items-center space-x-4">
-              <div class="flex min-w-0 flex-1 justify-between">
+              <div class="flex min-w-0 flex-1 justify-between gap-5">
                 <span
                   class="flex justify-between truncate text-left text-gray-900"
                 >

@@ -17,7 +17,14 @@ export default {
     SignDiv,
   },
   sockets: {},
-  methods: {},
+  methods: {
+    leaveRoom() {
+      this.$socket.emit('leave_room', {
+        roomId: this.$store.state.Lobby.roomId,
+      });
+      this.$router.push('/');
+    },
+  },
   watch: {},
   beforeMount() {},
 };
