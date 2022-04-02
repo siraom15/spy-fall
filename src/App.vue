@@ -22,9 +22,9 @@ export default {
 <template>
   <div class="font-bungee">
     <main>
-      <div class="text-white font-sans">
+      <!-- <div class="text-white font-sans">
         {{ $store.state }}
-      </div>
+      </div> -->
       <ServerStatus />
       <ChangeLang />
       <router-view />
