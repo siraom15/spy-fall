@@ -1,6 +1,18 @@
-<script setup>
+<script>
 import BaseButton from '@/components/BaseButton.vue';
 import TwoColorText from '@/components/TwoColorText.vue';
+import {InformationCircleIcon} from '@heroicons/vue/outline';
+export default {
+  setup() {
+    
+  },
+  name: 'Home',
+  components: {
+    BaseButton,
+    TwoColorText,
+    InformationCircleIcon
+  }
+}
 </script>
 
 <template>
@@ -32,20 +44,7 @@ import TwoColorText from '@/components/TwoColorText.vue';
             class=" hover:bg-blue-light mt-5 text-white py-2 px-4 rounded flex"
           >
             &nbsp;
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              stroke-width="2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-              />
-            </svg>
+            <InformationCircleIcon class="h-5 w-5"/>
             <p class="px-2 underline">{{$t('howToPlay')}}</p>
           </div>
         </router-link>
