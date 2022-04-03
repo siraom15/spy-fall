@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import './tailwind.css';
 import App from './App.vue';
-import router from './routes.js';
+import router from './routes';
 import store from './store';
 import i18n from '@/i18n';
 import vueio from './socket';
