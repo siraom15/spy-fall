@@ -4,7 +4,7 @@ import store from '@/store';
 
 const vueio = new VueSocketIO({
   debug: true,
-  connection: SocketIO(import.meta.env.VITE_APP_SOCKET_URL),
+  connection: SocketIO(import.meta.env.VITE_SERVER_URL),
   vuex: {
     store,
     actionPrefix: 'SOCKET_',
