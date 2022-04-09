@@ -3,13 +3,14 @@ import BaseButton from '@/components/BaseButton.vue';
 import TwoColorText from '@/components/TwoColorText.vue';
 import PlayerLobby from '@/components/PlayerLobby.vue';
 import SignDiv from '@/components/SignDiv.vue';
-import { ref } from '@vue/reactivity';
+import LocationListModal from '@/components/LocationListModal.vue';
 
 export default {
   name: 'Lobby',
   data() {
     return {
       playTimeInSec: this.$store.state.Lobby.roomSetting.playTime * 60,
+      isShowLocationList: false,
     };
   },
   components: {
@@ -17,6 +18,7 @@ export default {
     TwoColorText,
     PlayerLobby,
     SignDiv,
+    LocationListModal,
   },
   sockets: {
     randomed_role: function (data) {
@@ -43,6 +45,13 @@ export default {
       });
       this.$router.push('/');
     },
+    toggleLocationList() {
+      this.isShowLocationList = !this.isShowLocationList;
+    },
+    closeLocationList() {
+      console.log('closeLocationList');
+      this.isShowLocationList = false;
+    },
   },
   watch: {
     playTimeInSec: {
@@ -62,18 +71,22 @@ export default {
     },
   },
   beforeMount() {
-    if (this.$store.state.Lobby.roomId === '') {
-      this.$router.push('/');
-    }
+    // if (this.$store.state.Lobby.roomId === '') {
+    //   this.$router.push('/');
+    // }
   },
 };
 </script>
 
 <template>
-  <div class="flex h-screen items-center justify-center">
-    <div>
+  <div>
+    <LocationListModal
+      :isShow="isShowLocationList"
+      @closeLocationList="closeLocationList"
+    />
+    <div class="flex h-screen items-center justify-center">
       <div
-        class="flex flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4"
+        class="flex w-full flex-col items-center justify-center gap-3 sm:gap-3 md:gap-4 lg:gap-4 xl:gap-4 2xl:gap-4"
       >
         <SignDiv :text="`${$t('gameId')} : ${$store.state.Lobby.roomId}`" />
 
@@ -98,6 +111,12 @@ export default {
           class="text-xl sm:text-2xl md:text-2xl lg:text-3xl"
         />
         <PlayerLobby class="mt-2" :players="$store.state.Lobby.players" />
+        <BaseButton
+          :text="$t('showLocationList')"
+          color="green"
+          @click="toggleLocationList"
+        />
+
         <div class="mt-5 flex gap-4">
           <BaseButton :text="$t('leaveGame')" color="red" @click="leaveRoom" />
         </div>
@@ -105,5 +124,3 @@ export default {
     </div>
   </div>
 </template>
-
-<style scoped></style>
