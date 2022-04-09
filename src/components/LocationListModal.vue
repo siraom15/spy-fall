@@ -82,7 +82,7 @@ export default {
                   @click="toggleLocation(index)"
                   :class="
                     !hiddenLocationIndexes.includes(index)
-                      ? 'bg-red-500 text-white'
+                      ? 'bg-red-500 text-white border-red-500'
                       : 'bg-yellow-300 text-red-400 border-red-400'
                   "
                   :key="index"
