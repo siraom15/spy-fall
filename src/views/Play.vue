@@ -71,9 +71,9 @@ export default {
     },
   },
   beforeMount() {
-    // if (this.$store.state.Lobby.roomId === '') {
-    //   this.$router.push('/');
-    // }
+    if (this.$store.state.Lobby.roomId === '') {
+      this.$router.push('/');
+    }
   },
 };
 </script>
