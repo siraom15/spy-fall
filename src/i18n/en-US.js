@@ -29,6 +29,10 @@ const en = {
   joinRoomFailed: 'Join Room Fail',
   noRoomExist: 'No Room Exist',
   vote: 'Vote',
+  locationList: 'Location List',
+  showLocationList: 'Show Location List',
+  close: 'Close',
+  clickToHide: 'Click to hide',
   roles: {
     spy: 'Spy',
 

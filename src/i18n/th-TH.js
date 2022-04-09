@@ -29,6 +29,10 @@ const th = {
   joinRoomFailed: 'เข้าร่วมห้องล้มเหลว',
   noRoomExist: 'ไม่พบห้องนี้',
   vote: 'โหวต',
+  locationList: 'รายชื่อสถานที่ทั้งหมด',
+  showLocationList: 'แสดงรายชื่อสถานที่ทั้งหมด',
+  close: 'ปิด',
+  clickToHide: 'คลิกเพื่อซ่อน',
   roles: {
     spy: 'สายลับ',
 
@@ -274,7 +278,7 @@ const th = {
     crusaderArmy: 'กองทัพครูเสด',
     casino: 'คาสิโน',
     daySpa: 'เดย์สปา',
-    dublinAnimeMeetup: 'Dublin Anime Meetup',
+    dublinAnimeMeetup: 'การประชุม Anime ',
     embassy: 'สถานทูต',
     hospital: 'โรงพยาบาล',
     hotel: 'โรงแรม',
@@ -282,7 +286,7 @@ const th = {
     movieStudio: 'สตูดิโอภาพยนตร์',
     oceanLiner: 'โอเชี่ยนไลเนอร์',
     passengerTrain: 'รถไฟโดยสาร',
-    pirateShip: 'Pirate Ship',
+    pirateShip: 'เรือโจรสลัด',
     polarStation: 'สถานีโพลาร์',
     policeStation: 'สถานีตำรวจ',
     restaurant: 'ร้านอาหาร',
