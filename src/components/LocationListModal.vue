@@ -77,13 +77,13 @@ export default {
               </p>
               <div class="grid grid-cols-3 gap-5">
                 <div
-                  class="border-2 border-red-400 p-4 text-center text-xs hover:bg-red-500 hover:text-white"
+                  class="border-2  p-4 text-center text-xs "
                   v-for="(location, index) in locations"
                   @click="toggleLocation(index)"
                   :class="
                     !hiddenLocationIndexes.includes(index)
                       ? 'bg-red-500 text-white'
-                      : 'bg-yellow-300 text-red-300'
+                      : 'bg-yellow-300 text-red-400 border-red-400'
                   "
                   :key="index"
                 >
