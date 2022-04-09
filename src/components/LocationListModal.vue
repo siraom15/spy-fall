@@ -1,11 +1,12 @@
 <script>
 import BaseButton from './BaseButton.vue';
-
+import { InformationCircleIcon } from '@heroicons/vue/solid';
 export default {
   name: 'LocationListModal',
   emits: ['closeLocationList'],
   components: {
     BaseButton,
+    InformationCircleIcon,
   },
   props: {
     isShow: {
@@ -70,14 +71,20 @@ export default {
         <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div class="sm:flex sm:items-start">
             <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <p class="mb-2 text-base">{{ $t('locationList') }}</p>
-              <p class="mb-2 text-xs">{{ $t('clickToHide') }}</p>
+              <p class="mb-2 text-lg text-center">{{ $t('locationList') }}</p>
+              <p class="mb-2 text-xs flex items-center gap-2">
+                <InformationCircleIcon class="w-5" />{{ $t('clickToHide') }}
+              </p>
               <div class="grid grid-cols-3 gap-5">
                 <div
                   class="border-2 border-red-400 p-4 text-center text-xs hover:bg-red-500 hover:text-white"
                   v-for="(location, index) in locations"
                   @click="toggleLocation(index)"
-                  :class="!hiddenLocationIndexes.includes(index) ? 'bg-red-500 text-white' : 'bg-yellow-300 text-red-300'"
+                  :class="
+                    !hiddenLocationIndexes.includes(index)
+                      ? 'bg-red-500 text-white'
+                      : 'bg-yellow-300 text-red-300'
+                  "
                   :key="index"
                 >
                   {{ $t(location.location) }}
