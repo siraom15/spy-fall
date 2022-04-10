@@ -8,7 +8,7 @@ export default {
 </script>
 
 <template>
-  <div
+  <div v-if="!$store.state.Server.serverStatus"
     class="space-x absolute top-20 right-5 flex w-full max-w-xs items-center space-x-4 divide-x divide-gray-200 rounded-lg p-4 shadow"
     :class="
       $store.state.Server.serverStatus
