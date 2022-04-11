@@ -117,21 +117,37 @@ This is an example of how to list things you need to use the software and how to
 _You also need to install [serverside](https://github.com/siraom15/spy-fall-server)_
 
 1. Clone the repo
+
    ```sh
-   git clone https://github.com/siraom15/spy-fall-client.git
+    git clone https://github.com/siraom15/spy-fall-client.git
    ```
+
 2. Install NPM packages
+
    ```sh
-    npm i
-    npm run dev
-    npm run build
-    npm run serve
+    npm install
    ```
-3. VITE_APP_PORT, VITE_SERVER_URL in `.env`
+
+3. setup environment : VITE_APP_PORT, VITE_SERVER_URL in `.env`
+
    ```js
     VITE_APP_PORT=3000
     VITE_SERVER_URL=https://spyfall-sv.herokuapp.com
    ```
+
+4. Start your site
+
+   ```js
+      npm run dev
+   ```
+
+5. Build your site
+
+   ```js
+      npm run build
+      npm run serve
+   ```
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
