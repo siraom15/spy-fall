@@ -4,7 +4,7 @@ export default {
   name: 'ChangeLang',
   components: { GlobeAltIcon },
   data() {
-    return { langs: ['en', 'th'] };
+    return { langs: ['en', 'th', 'pt'] };
   },
 };
 </script>
